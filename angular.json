@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "game-catalog"
+    }
+  },
+  "defaultProject": "game-catalog",
+  "cli": {
+    "defaultCollection": "@datorama/akita"
+  }
 }
