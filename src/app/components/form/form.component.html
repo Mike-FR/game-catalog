@@ -1,0 +1,23 @@
+<section>
+  <h2>ADD A NEW GAME IN CATALOG</h2>
+  <form (submit)=addGame()>
+    <div class="form-group">
+      <mat-form-field>
+        <input matInput type="text" class="form-control" name="title" placeholder="title" [(ngModel)]="title">
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput type="textarea" class="form-control" name="description" placeholder="description"
+          [(ngModel)]="description"></textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="number" class="form-control" name="price" placeholder="price" [(ngModel)]="price">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="string" class="form-control" name="image" placeholder="image url" [(ngModel)]="cover">
+      </mat-form-field>
+    </div>
+    <button type="submit" mat-flat-button color="primary">Save</button>
+  </form>
+</section>
+
+<!-- <button mat-flat-button color="primary" routerLink="/list">Back to catalog</button> -->

@@ -1,0 +1,13 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    text-align: center;
+}

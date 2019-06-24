@@ -1,0 +1,24 @@
+.game {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 16px;
+    padding: 16px;
+    border-radius: 8px;
+    width: 20%;
+}
+
+img {
+    width: 100%;
+}
+
+app-form {
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+    margin-top: 3em;
+    text-align: center;
+}
