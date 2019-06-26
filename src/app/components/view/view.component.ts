@@ -13,16 +13,13 @@ export class ViewComponent implements OnInit {
 
   games: Game[];
 
-  constructor(private dataService: DataService) { }
+  constructor(public dataService: DataService) { }
 
   ngOnInit() {
-    this.games = this.dataService.getGame();
-
   }
 
   removeGame(game: Game) {
     this.dataService.removeGame(game);
   }
-
 
 }

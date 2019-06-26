@@ -1,19 +1,8 @@
 <app-form (gameAdded)="addGame($event)"></app-form>
 
-<section>
-  <h2>Games Catalog</h2>
+<h2>Games Catalog</h2>
 
-  <mat-tab-group dynamicHeight>
-    <mat-tab *ngFor="let game of games" [label]="game.title">
-      <div class="game mat-elevation-z4">
-        <img [src]="game.cover" alt="game.title">
-        <p>{{game.price}} €</p>
-        <button mat-flat-button color="primary" routerLink="/details" (click)="viewDetails()">Details</button>
-      </div>
-      <div *ngIf="detailView === true">
-        <app-view></app-view>
-      </div>
-    </mat-tab>
-  </mat-tab-group>
-
-</section>
+<div class="view">
+  <app-view *ngFor="let game of games" [game]="game">
+  </app-view>
+</div>

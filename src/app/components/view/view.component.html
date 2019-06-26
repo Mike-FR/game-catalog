@@ -1,4 +1,18 @@
-<div>
-  <p>{{game.description}}</p>
-  <button mat-flat-button color="danger" (click)="removeGame(game)">Remove</button>
-</div>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{game.title}}</mat-card-title>
+  </mat-card-header>
+  <img [src]="game.cover" alt="game.title">
+  <mat-card-content>
+    <div [hidden]="game.hide">
+      <p>{{game.price}} €</p>
+      <p>
+        {{game.description}}
+      </p>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button (click)="game.hide = !game.hide" mat-button color="primary">Details</button>
+    <button (click)="removeGame(game)" mat-button color="warn">Remove</button>
+  </mat-card-actions>
+</mat-card>

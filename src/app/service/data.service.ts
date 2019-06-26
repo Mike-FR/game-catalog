@@ -18,9 +18,7 @@ export class DataService {
   },
   ];
 
-  
   constructor() {
-    // this.games = [];
     localStorage.setItem('games', JSON.stringify(this.games));
   }
 
@@ -43,8 +41,8 @@ export class DataService {
       localStorage.setItem('games', JSON.stringify(games));
     } else {
       games = JSON.parse(localStorage.getItem('games'));
-      games.unshift(games);
-      localStorage.setItem('games', JSON.stringify(this.games));
+      games.unshift(game);
+      localStorage.setItem('games', JSON.stringify(games));
     }
   }
 

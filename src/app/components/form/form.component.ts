@@ -27,10 +27,10 @@ export class FormComponent implements OnInit {
       price: this.price,
       cover: this.cover
     });
-    // this.title = '';
-    // this.description = '';
-    // this.price = null;
-    // this.cover = '';
+    this.title = '';
+    this.description = '';
+    this.price = null;
+    this.cover = '';
   }
 
 }

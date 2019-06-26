@@ -11,16 +11,11 @@ import { DataService } from '../../service/data.service';
 export class ListComponent implements OnInit {
 
   games: Game[];
-  detailView = false;
 
-  constructor(private dataService: DataService) { }
+  constructor(public dataService: DataService) { }
 
   ngOnInit() {
     this.games = this.dataService.getGame();
-  }
-
-  viewDetails() {
-    this.detailView = !this.detailView;
   }
 
   addGame(game: Game) {
