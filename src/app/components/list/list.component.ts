@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from '../../model/game';
 import { DataService } from '../../service/data.service';
+import { GamesQuery } from 'src/app/games/state/games.query';
 
 
 @Component({
@@ -12,7 +13,8 @@ export class ListComponent implements OnInit {
 
   games: Game[];
 
-  constructor(public dataService: DataService) { }
+  constructor(public dataService: DataService,
+              private gameQuery: GamesQuery) { }
 
   ngOnInit() {
     this.games = this.dataService.getGame();

@@ -3,6 +3,9 @@
 <h2>Games Catalog</h2>
 
 <div class="view">
-  <app-view *ngFor="let game of games" [game]="game">
-  </app-view>
+  <ng-container
+   *ngFor="let game of gameQuery.selectAll() | async">
+    <app-view *ngIf="game" [game]="game" (click)="showEditModal(game)">
+    </app-view>
+  </ng-container>
 </div>

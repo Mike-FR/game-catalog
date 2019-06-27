@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Game } from '../../model/game';
+import {Game} from '../../games/state/game.model';
+import { GamesService } from 'src/app/games/state/games.service';
 
 @Component({
   selector: 'app-form',
@@ -15,22 +16,19 @@ export class FormComponent implements OnInit {
 
   @Output() gameAdded = new EventEmitter<Game>();
 
-  constructor() { }
+  constructor(private gameService: GamesService) { }
 
   ngOnInit() {
   }
 
   addGame() {
-    this.gameAdded.emit({
+    this.gameService.add({
       title: this.title,
       description: this.description,
       price: this.price,
       cover: this.cover
-    });
-    this.title = '';
-    this.description = '';
-    this.price = null;
-    this.cover = '';
+    } as Game);
+
   }
 
 }

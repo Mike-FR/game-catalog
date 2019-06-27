@@ -6,7 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCheckboxModule, MatOptionModule, MatSelectModule, MatInputModule, MatCardModule, MatListModule } from '@angular/material';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { MatButtonModule, MatCheckboxModule, MatOptionModule, MatSelectModule, MatInputModule, MatCardModule, MatListModule, MatChipsModule } from '@angular/material';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
@@ -28,6 +29,7 @@ import { FormComponent } from './components/form/form.component';
     FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    NgbModule,
     MatButtonModule,
     MatCheckboxModule,
     MatTabsModule,
@@ -38,6 +40,7 @@ import { FormComponent } from './components/form/form.component';
     MatButtonModule,
     MatCardModule,
     MatListModule,
+    MatChipsModule,
     environment.production ?
       [] :
       [AkitaNgDevtools.forRoot(), AkitaNgRouterStoreModule.forRoot()]

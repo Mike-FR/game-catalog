@@ -1,8 +1,13 @@
 mat-card {
     max-width: 300px;
     margin: 2em;
+    text-align: center;
 }
 
 img {
     width: 100%;
+}
+
+button {
+    margin: 1em;
 }
