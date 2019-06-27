@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Game } from '../../games/state/game.model';
+import { GamesService } from 'src/app/games/state/games.service';
 
 @Component({
   selector: 'app-view',
@@ -10,16 +11,15 @@ export class ViewComponent implements OnInit {
 
   @Input('game') game: Game;
 
-
   details = false;
 
-  constructor() { }
+  constructor(private gameService: GamesService) { }
 
   ngOnInit() {
   }
 
   removeGame(game: Game) {
-    // this.dataService.removeGame(game);
+    this.gameService.remove(game);
   }
 
   showDetails() {

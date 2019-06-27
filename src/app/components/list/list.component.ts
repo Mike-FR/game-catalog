@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Game } from '../../model/game';
-import { DataService } from '../../service/data.service';
+import { Game } from '../../games/state/game.model';
 import { GamesQuery } from 'src/app/games/state/games.query';
+import { GamesService } from 'src/app/games/state/games.service';
 
 
 @Component({
@@ -13,18 +13,11 @@ export class ListComponent implements OnInit {
 
   games: Game[];
 
-  constructor(public dataService: DataService,
-              private gameQuery: GamesQuery) { }
+  constructor(private gameQuery: GamesQuery,
+              private gameService: GamesService) { }
 
   ngOnInit() {
-    this.games = this.dataService.getGame();
+
   }
 
-  addGame(game: Game) {
-    this.dataService.addGames(game);
-  }
-
-  removeGame(game: Game) {
-    this.dataService.removeGame(game);
-  }
 }

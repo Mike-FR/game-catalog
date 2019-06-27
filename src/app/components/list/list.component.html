@@ -5,7 +5,7 @@
 <div class="view">
   <ng-container
    *ngFor="let game of gameQuery.selectAll() | async">
-    <app-view *ngIf="game" [game]="game" (click)="showEditModal(game)">
+    <app-view *ngIf="game" [game]="game" (click)="showEditModal(game.id)">
     </app-view>
   </ng-container>
 </div>

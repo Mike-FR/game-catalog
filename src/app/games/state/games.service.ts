@@ -21,7 +21,7 @@ export class GamesService {
     this.gamesStore.update(id, game);
   }
 
-  remove(id: ID) {
-    this.gamesStore.remove(id);
+  remove(game) {
+    this.gamesStore.remove(game.id);
   }
 }
