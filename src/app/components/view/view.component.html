@@ -1,12 +1,15 @@
 <mat-card>
   <mat-card-header>
     <mat-card-title>{{ game.title }}</mat-card-title>
-    <button (click)="editGame(game)" mat-flat-button color="warn">Edit</button>
     <i class="fas fa-pen-square"></i>
   </mat-card-header>
   <img [src]="game.cover" alt="game.title">
-  <mat-card-content>
-    <div class="details" *ngIf="details === true">
+  <mat-card-actions>
+    <button (click)="showDetails()" mat-flat-button color="primary">{{details ? 'Hide details' : 'Details'}}</button>
+    <button (click)="removeGame(game)" mat-flat-button color="warn">Remove</button>
+  </mat-card-actions>
+  <mat-card-content *ngIf="details === true">
+    <div class="details">
       <mat-chip-list aria-label="Fish selection">
         <mat-chip>{{game.price}} €</mat-chip>
       </mat-chip-list>
@@ -15,8 +18,5 @@
       </p>
     </div>
   </mat-card-content>
-  <mat-card-actions>
-    <button (click)="showDetails()" mat-flat-button color="primary">Details</button>
-    <button (click)="removeGame(game)" mat-flat-button color="warn">Remove</button>
-  </mat-card-actions>
+
 </mat-card>

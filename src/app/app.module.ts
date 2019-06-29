@@ -5,9 +5,11 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { MatButtonModule, MatCheckboxModule, MatOptionModule, MatSelectModule, MatInputModule, MatCardModule, MatListModule, MatChipsModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatOptionModule, MatSelectModule, MatInputModule, MatCardModule,
+   MatListModule, MatChipsModule, MatSidenavModule, MatIconModule, MatToolbarModule } from '@angular/material';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
@@ -40,10 +42,12 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     MatOptionModule,
     MatSelectModule,
     MatInputModule,
-    MatButtonModule,
     MatCardModule,
     MatListModule,
     MatChipsModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatIconModule,
     environment.production ?
       [] :
       [AkitaNgDevtools.forRoot(), AkitaNgRouterStoreModule.forRoot()]

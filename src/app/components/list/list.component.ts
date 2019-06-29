@@ -13,13 +13,18 @@ import { Observable } from 'rxjs';
 export class ListComponent implements OnInit {
 
   games$: Observable<Game[]>;
+  showFiller = false;
+  showForm = false;
 
   constructor(private gameQuery: GamesQuery,
               private gameService: GamesService) { }
 
   ngOnInit() {
     this.games$ = this.gameQuery.selectAll();
-    this.gameService.get();
   }
 
+
+  showAddForm() {
+    this.showForm = !this.showForm;
+  }
 }

@@ -5,13 +5,14 @@ import { ViewComponent } from './components/view/view.component';
 import { FormComponent } from './components/form/form.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  },
+  // {
+  //   path: '',
+  //   redirectTo: '/home',
+  //   pathMatch: 'full'
+  // },
+  // { path: '**', component: ListComponent},
   { path: 'home', component: ListComponent},
-  { path: 'edit/:id', component: FormComponent},
+  { path: 'addgame', component: FormComponent},
 ];
 
 

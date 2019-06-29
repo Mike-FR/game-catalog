@@ -1,11 +1,15 @@
-<app-form (gameAdded)="addGame($event)"></app-form>
+<!-- <app-form (gameAdded)="addGame($event)"></app-form> -->
 
-<h2>Games Catalog</h2>
+<!-- <app-form *ngIf="showForm"></app-form> -->
+
+<header>
+  <h2>Games Catalog</h2>
+  <!-- <button (click)="showAddForm()" mat-flat-button color="primary">ADD GAME</button> -->
+</header>
 
 <div class="view">
-  <ng-container
-   *ngFor="let game of gameQuery.selectAll() | async">
-    <app-view *ngIf="game" [game]="game" (click)="showEditModal(game.id)">
+  <ng-container *ngFor="let game of gameQuery.selectAll() | async">
+    <app-view *ngIf="game" [game]="game">
     </app-view>
   </ng-container>
 </div>

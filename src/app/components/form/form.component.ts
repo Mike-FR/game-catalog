@@ -14,7 +14,7 @@ export class FormComponent implements OnInit {
   price: number;
   cover: string;
 
-  @Output() gameAdded = new EventEmitter<Game>();
+  // @Output() gameAdded = new EventEmitter<Game>();
 
   constructor(private gameService: GamesService) { }
 

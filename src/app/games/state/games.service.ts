@@ -14,6 +14,7 @@ export class GamesService {
   constructor(private gamesStore: GamesStore) {
   }
 
+
   get() {
     of(gamesList).subscribe(entities => {
       this.gamesStore.set(entities);
