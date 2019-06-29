@@ -16,6 +16,8 @@ import { environment } from '../environments/environment';
 import { ListComponent } from './components/list/list.component';
 import { ViewComponent } from './components/view/view.component';
 import { FormComponent } from './components/form/form.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { FormComponent } from './components/form/form.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     NgbModule,
+    AngularFontAwesomeModule,
     MatButtonModule,
     MatCheckboxModule,
     MatTabsModule,

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Game } from '../../games/state/game.model';
 import { GamesQuery } from 'src/app/games/state/games.query';
 import { GamesService } from 'src/app/games/state/games.service';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -11,13 +12,14 @@ import { GamesService } from 'src/app/games/state/games.service';
 })
 export class ListComponent implements OnInit {
 
-  games: Game[];
+  games$: Observable<Game[]>;
 
   constructor(private gameQuery: GamesQuery,
               private gameService: GamesService) { }
 
   ngOnInit() {
-
+    this.games$ = this.gameQuery.selectAll();
+    this.gameService.get();
   }
 
 }

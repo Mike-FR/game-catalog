@@ -3,6 +3,8 @@ import { ID } from '@datorama/akita';
 import { HttpClient } from '@angular/common/http';
 import { GamesStore } from './games.store';
 import { Game } from './game.model';
+import gamesList from '../../game.data'
+import { of } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class GamesService {
@@ -12,13 +14,19 @@ export class GamesService {
   constructor(private gamesStore: GamesStore) {
   }
 
+  get() {
+    of(gamesList).subscribe(entities => {
+      this.gamesStore.set(entities);
+    });
+  }
+
   add(game: Game) {
     game.id = GamesService.id++;
     this.gamesStore.add(game);
   }
 
-  update(id, game: Partial<Game>) {
-    this.gamesStore.update(id, game);
+  update(game: Partial<Game>) {
+    this.gamesStore.update(game.id, game);
   }
 
   remove(game) {

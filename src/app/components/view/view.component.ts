@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Game } from '../../games/state/game.model';
 import { GamesService } from 'src/app/games/state/games.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view',
@@ -13,13 +14,18 @@ export class ViewComponent implements OnInit {
 
   details = false;
 
-  constructor(private gameService: GamesService) { }
+  constructor(private gameService: GamesService,
+              private router: Router) { }
 
   ngOnInit() {
   }
 
   removeGame(game: Game) {
     this.gameService.remove(game);
+  }
+
+  editGame() {
+    this.router.navigate(['/edit/' + this.game.id]);
   }
 
   showDetails() {
