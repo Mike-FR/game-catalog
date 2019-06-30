@@ -1,6 +1,6 @@
 import { ID } from '@datorama/akita';
 
-export interface Game {
+export class Game {
   id: ID;
   title: string;
   description: string;
@@ -11,10 +11,12 @@ export interface Game {
 /**
  * A factory function that creates Games
  */
-export function createGame(params: Partial<Game>) {
-  return {
+export function createGame(): Game {
+  const game = new Game();
+  game.id = this.id;
+  this.id++;
 
-  } as Game;
+  return game;
 }
 
 

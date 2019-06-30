@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { MatButtonModule, MatCheckboxModule, MatOptionModule, MatSelectModule, MatInputModule, MatCardModule,
-   MatListModule, MatChipsModule, MatSidenavModule, MatIconModule, MatToolbarModule } from '@angular/material';
+   MatListModule, MatChipsModule, MatSidenavModule, MatIconModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
@@ -34,6 +34,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     AppRoutingModule,
     BrowserAnimationsModule,
     NgbModule,
+    ReactiveFormsModule,
     AngularFontAwesomeModule,
     MatButtonModule,
     MatCheckboxModule,
@@ -48,6 +49,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
+    MatTooltipModule,
     environment.production ?
       [] :
       [AkitaNgDevtools.forRoot(), AkitaNgRouterStoreModule.forRoot()]

@@ -17,7 +17,6 @@ export class GamesStore extends EntityStore<GamesState, Game> {
   @transaction()
   getGameList() {
     this.add(gamesList);
-
   }
 
 }

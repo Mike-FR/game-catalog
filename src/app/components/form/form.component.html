@@ -1,21 +1,21 @@
 <section>
   <h2>ADD A NEW GAME IN CATALOG</h2>
-  <form (submit)=addGame()>
+  <form #gamesForm="ngForm" (submit)=addGame()>
     <div class="form-group">
       <mat-form-field>
-        <input matInput type="text" class="form-control" name="title" placeholder="title" [(ngModel)]="title">
+        <input matInput type="text" class="form-control" name="title" placeholder="title" [(ngModel)]="title" required>
       </mat-form-field>
       <mat-form-field>
         <textarea matInput type="textarea" class="form-control" name="description" placeholder="description"
-          [(ngModel)]="description"></textarea>
+          [(ngModel)]="description" required></textarea>
       </mat-form-field>
       <mat-form-field>
-        <input matInput type="number" class="form-control" name="price" placeholder="price" [(ngModel)]="price">
+        <input matInput type="number" class="form-control" name="price" placeholder="price" [(ngModel)]="price" required>
       </mat-form-field>
       <mat-form-field>
-        <input matInput type="string" class="form-control" name="image" placeholder="image url" [(ngModel)]="cover">
+        <input matInput type="string" class="form-control" name="image" placeholder="image url" [(ngModel)]="cover" required>
       </mat-form-field>
     </div>
-    <button type="submit" mat-flat-button color="primary">Save</button>
+    <button type="submit" mat-flat-button [disabled]="!gamesForm.form.valid" color="primary">Save</button>
   </form>
-</section>S
+</section>

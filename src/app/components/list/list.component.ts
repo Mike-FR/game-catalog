@@ -3,7 +3,7 @@ import { Game } from '../../games/state/game.model';
 import { GamesQuery } from 'src/app/games/state/games.query';
 import { GamesService } from 'src/app/games/state/games.service';
 import { Observable } from 'rxjs';
-
+import gamesList from 'src/app/game.data';
 
 @Component({
   selector: 'app-list',
@@ -14,17 +14,15 @@ export class ListComponent implements OnInit {
 
   games$: Observable<Game[]>;
   showFiller = false;
-  showForm = false;
 
   constructor(private gameQuery: GamesQuery,
-              private gameService: GamesService) { }
+              private gameService: GamesService,
+              ) { }
 
   ngOnInit() {
     this.games$ = this.gameQuery.selectAll();
   }
 
 
-  showAddForm() {
-    this.showForm = !this.showForm;
-  }
+
 }

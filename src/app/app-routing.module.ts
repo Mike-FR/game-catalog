@@ -12,6 +12,7 @@ const routes: Routes = [
   // },
   // { path: '**', component: ListComponent},
   { path: 'home', component: ListComponent},
+  { path: 'edit/:id', component: FormComponent},
   { path: 'addgame', component: FormComponent},
 ];
 

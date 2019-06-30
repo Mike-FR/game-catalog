@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import {Game} from '../../games/state/game.model';
+import { Game, createGame } from '../../games/state/game.model';
 import { GamesService } from 'src/app/games/state/games.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -9,16 +10,29 @@ import { GamesService } from 'src/app/games/state/games.service';
 })
 export class FormComponent implements OnInit {
 
+  id: any;
   title: string;
   description: string;
   price: number;
   cover: string;
 
-  // @Output() gameAdded = new EventEmitter<Game>();
+  game: Game;
 
-  constructor(private gameService: GamesService) { }
+  updated = false;
+
+  constructor(private gameService: GamesService,
+              private router: Router,
+              private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.id = this.activatedRoute.snapshot.paramMap.get('id');
+    if (this.id != null) {
+      this.game = this.gameService.get(this.id);
+      this.updated = true;
+    } else {
+      this.game = createGame();
+      this.id = this.game.id;
+    }
   }
 
   addGame() {
@@ -28,7 +42,7 @@ export class FormComponent implements OnInit {
       price: this.price,
       cover: this.cover
     } as Game);
-
+    this.router.navigate(['/home']);
   }
 
 }

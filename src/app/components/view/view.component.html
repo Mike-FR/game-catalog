@@ -1,7 +1,9 @@
 <mat-card>
   <mat-card-header>
     <mat-card-title>{{ game.title }}</mat-card-title>
-    <i class="fas fa-pen-square"></i>
+    <i class="material-icons" (click)="editGame()" matTooltip="Edit this game" matTooltipPosition="above">
+      border_color
+    </i>
   </mat-card-header>
   <img [src]="game.cover" alt="game.title">
   <mat-card-actions>
