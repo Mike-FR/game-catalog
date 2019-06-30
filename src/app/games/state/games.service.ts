@@ -5,24 +5,24 @@ import { GamesStore } from './games.store';
 import { Game } from './game.model';
 import gamesList from '../../game.data'
 import { of } from 'rxjs';
-import { GamesQuery } from './games.query';
 
 @Injectable({ providedIn: 'root' })
 export class GamesService {
 
-  constructor(private gamesStore: GamesStore,
-              private gamesQuery: GamesQuery) {
+  private static id = 3;
+
+  constructor(private gamesStore: GamesStore) {
   }
 
 
-  getGames() {
+  get() {
     of(gamesList).subscribe(entities => {
       this.gamesStore.set(entities);
     });
   }
 
   add(game: Game) {
-    game.id = this.gamesQuery.getCount();
+    game.id = GamesService.id++;
     this.gamesStore.add(game);
   }
 
@@ -32,9 +32,5 @@ export class GamesService {
 
   remove(game) {
     this.gamesStore.remove(game.id);
-  }
-
-  get(id) {
-    return this.gamesQuery.getEntity(id);
   }
 }

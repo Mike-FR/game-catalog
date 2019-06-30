@@ -20,4 +20,3 @@ export class GamesStore extends EntityStore<GamesState, Game> {
   }
 
 }
-
