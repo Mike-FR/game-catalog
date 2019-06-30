@@ -15,11 +15,7 @@ export class GamesService {
   }
 
 
-  get() {
-    of(gamesList).subscribe(entities => {
-      this.gamesStore.set(entities);
-    });
-  }
+ 
 
   add(game: Game) {
     game.id = GamesService.id++;

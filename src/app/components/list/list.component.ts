@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Game } from '../../games/state/game.model';
 import { GamesQuery } from 'src/app/games/state/games.query';
 import { GamesService } from 'src/app/games/state/games.service';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import gamesList from 'src/app/game.data';
+import { GamesStore } from 'src/app/games/state/games.store';
 
 
 @Component({
@@ -16,10 +18,11 @@ export class ListComponent implements OnInit {
   showFiller = false;
 
   constructor(private gameQuery: GamesQuery,
-              private gameService: GamesService) { }
+              private gameService: GamesService,
+              private gamesStore: GamesStore) { }
 
   ngOnInit() {
-    this.games$ = this.gameQuery.selectAll();
+      this.games$ = this.gameQuery.selectAll();
   }
 
 }
